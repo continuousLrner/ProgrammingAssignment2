@@ -36,11 +36,11 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  if (!is.square.matrix(data)) {}
-  message("Invalid data. Matrix must be a square matrix to calculate its inverse")
-  return(m)
-}
-m <- solve(data, ...)
-x$setCacheMatrix(m)
-m
+  if (!is.square.matrix(data)) {
+    message("Invalid data. Matrix must be a square matrix to calculate its inverse")
+    return(m)
+  }
+  m <- solve(data, ...)
+  x$setCacheMatrix(m)
+  m
 }
