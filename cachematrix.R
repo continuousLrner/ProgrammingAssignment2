@@ -36,7 +36,7 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  if (!is.square.matrix(data)) {
+  if (nrow(data) != ncol(data)) {
     message("Invalid data. Matrix must be a square matrix to calculate its inverse")
     return(m)
   }
